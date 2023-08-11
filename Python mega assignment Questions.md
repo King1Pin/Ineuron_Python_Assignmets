@@ -142,46 +142,135 @@ Q25. Write a program to display only those numbers from a list that satisfy the 
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
+Ans 25. Please find the program below.
+
+numbers = [12, 75, 150, 180, 145, 525, 50]
+
+for num in numbers:
+    if num % 5 == 0:
+        if num > 150:
+            continue
+        print(num)
+    if num > 500:
+        break
 
 Q26. What is a string? How can we declare string in Python?
+Ans 26. A string is a data structure in Python that represents a sequence of characters. It is an immutable data type, meaning that once you have created a string, you cannot change it.
+
+We can declare a string by adding the text within single quotes as given below.
+String1 = 'Welcome to the Geeks World'
 
 Q27. How can we access the string using its index?
+Ans 27. We can access the string using the both positive index and negative index. As per below example the myStr has length 6. The positive index for this string will start from 0 and end at 5 here 0 is the first element and 5 is the last element. The negative index will start from -1 and go till -6 here -1 is the index of the last element and -6 represents the first character within the string. 
+
+myStr = 'Python'
+print(myStr[0])
+print(myStr[5])
+print(myStr[-1])
+print(myStr[-6])
+
+Output
+P
+n
+n
+P
 
 Q28. Write a code to get the desired output of the following
 ```
 string = "Big Data iNeuron"
 desired_output = "iNeuron"
 ```
+Ans 28. 
+
+myStr = 'Big Data iNeuron'
+print(myStr[9:16])
 
 Q29. Write a code to get the desired output of the following
 ```
 string = "Big Data iNeuron"
 desired_output = "norueNi"
 ```
+Ans29.
+
+def revStr (inpStr):
+    inpStr = inpStr[::-1]
+    return inpStr
+
+myStr = "Big Data iNeuron"
+print (revStr(myStr[9:16]))
 
 Q30. Resverse the string given in the above question.
+Ans 30.
+
+def revStr (inpStr):
+    inpStr = inpStr[::-1]
+    return inpStr
+
+myStr = "Big Data iNeuron"
+print (revStr(myStr))
 
 Q31. How can you delete entire string at once?
+Ans 31. In Python we can use "del" keyword to delete an entire string.
+
+myStr = "Hello World"
+print(myStr)
+del myStr
+print(myStr)
+
+Output
+Hello World
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+ERROR!
+NameError: name 'myStr' is not defined
 
 Q32. What is escape sequence?
+Ans 32. An escape sequence is combination of two characters which acts as a special characters. An escape sequence starts with \ and is followed by another character. To print double quotes with in a string we use \" escape sequence.
 
 Q33. How can you print the below string?
 ```
 'iNeuron's Big Data Course'
 ```
+Ans 33. print("\'iNeuron\' Big Data Course")
 
 Q34. What is a list in Python?
+Ans 34. Lists in Python are used to store multiple items in a single variable. The data inside the list are called items and the item values can be changed in a list.
 
 Q35. How can you create a list in Python?
+Ans 35. Lists are created using square brackets, and the items are added in a comma seperated list.
+
+myList = ["First", "Apple","Cat"]
+print(myList)
+
+List can also be created using the list constructor.
+
+myList = list(("First","Apple","Cat"))
+print(myList)
 
 Q36. How can we access the elements in a list?
+Ans 36. The items inside a list can be accessed using the index which starts from 0 and the last element is one less than the total items in the list.
+
+myList = ["First", "Apple","Cat"]
+print("First Item In List = "+myList[0])
+print("Last Item In List = "+myList[2])
 
 Q37. Write a code to access the word "iNeuron" from the given list.
 ```
 lst = [1,2,3,"Hi",[45,54, "iNeuron"], "Big Data"]
 ``` 
+Ans 37. print(lst[4][2])
 
 Q38. Take a list as an input from the user and find the length of the list.
+Ans 38. 
+
+myList = []
+listLen = int(input("Enter the length of the list "))
+print("Please enter the elements in the List")
+for i in range (0,listLen) :
+    item = input()
+    myList.append(item)
+print(myList)
+
 
 Q39. Add the word "Big" in the 3rd index of the given list.
 ```
