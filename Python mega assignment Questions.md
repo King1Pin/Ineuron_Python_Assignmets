@@ -264,46 +264,131 @@ Q38. Take a list as an input from the user and find the length of the list.
 Ans 38. 
 
 myList = []
-listLen = int(input("Enter the length of the list "))
-print("Please enter the elements in the List")
-for i in range (0,listLen) :
+listLen = 0
+print("Please enter the elements in the List exit just give a blank input")
+while True :
     item = input()
-    myList.append(item)
+    if (item != ""):
+        myList.append(item)
+        listLen += 1;
+    else : 
+        break;
 print(myList)
+print("Length of List is = " + str(listLen))
 
 
 Q39. Add the word "Big" in the 3rd index of the given list.
 ```
 lst = ["Welcome", "to", "Data", "course"]
 ```
+Ans 39. 
+
+lst = ["Welcome", "to", "Data", "course"]
+lst.insert(3,"Big")
+print(lst)
 
 Q40. What is a tuple? How is it different from list?
+Ans 40. Tuples are used to store multiple items in a single variable but they are ordered, not changeable and can store duplicate values. 
+
+Difference between list and tuple is that list are changeable and can be reordered where as tuple does not support these properties.
 
 Q41. How can you create a tuple in Python?
+Ans 41. Tuple are created using round brackets, and the items are added in a comma seperated list. To create a tuple with a single element we need to provide a comma after the element else it will be a string type variable.
+
+#this is a tuple
+thistuple = ("apple",)
+print(type(thistuple))
+
+#This is not a tuple
+thistuple = ("apple")
+print(type(thistuple)) 
+
+Tuple can also be created using the tuple constructor.
+
+mytuple = tuple(("apple", "banana", "cherry"))
+print(type(mytuple))
+print(mytuple)
 
 Q42. Create a tuple and try to add your name in the tuple. Are you able to do it? Support your answer with reason.
+Ans 42. We cannot add values to a tuple after the tuple is created because tuple are unchangeable. We can use list instead of tuple if the usecase required us to edit the values after it is created.
+
+myTuple = ("iNeuron", "BigData")
+myTuple[2] = "Raja"
+#throws error at line 2
 
 Q43. Can two tuple be appended. If yes, write a code for it. If not, why?
+Ans 43. Yes we can append two tuples but we need to create a new tuple to store the appended tuples.
+
+myTuple1 = ("iNeuron", "BigData")
+print(myTuple1)
+myTuple2 = ("Course","Raja")
+print(myTuple2)
+myTuple3 = myTuple1 + myTuple2
+print(myTuple3) 
 
 Q44. Take a tuple as an input and print the count of elements in it.
+Ans 44. 
+inpTuple = ()
+tupleLen = 0
+print("Enter The Elements In The Tuple")
+
+while True : 
+    x = input ()
+    if (x != "") :
+        inpTuple = inpTuple + tuple(x,)
+        tupleLen = tupleLen + 1
+    else :
+        break
+print(type(inpTuple))
+print(inpTuple)
+print(tupleLen)
 
 Q45. What are sets in Python?
+Ans 45. Sets is a a collection which stores multiple items in a single variable. Sets is unordered the order of the items are not same , unchangeable the item value cannot be edited once added but we can add and remove items in a set. A sets cannot have duplicate items.
 
 Q46. How can you create a set?
+Ans 46. Set can be created by adding the elements within curly ({) brackets and values seperated by comma.
+
+inpSet = {1,'A', True, 2}
+print(type(inpSet))
+print(len(inpSet))
+print(inpSet)
+
+We can also create a set by using the Set constructor.
+
+mySet = set(('A','B',1))
+print(mySet)
 
 Q47. Create a set and add "iNeuron" in your set.
+Ans 47. 
+
+mySet = set(())
+mySet.add("iNeuron")
+print(mySet)
 
 Q48. Try to add multiple values using add() function.
+Ans 48. 
+
+mySet = set(())
+mySet.add('First')
+mySet.add('Second')
+mySet.add(True)
+print(mySet)
 
 Q49. How is update() different from add()?
+Ans 49. add method is used to add element in a Set where update element is used to add a set or list or tuple to a set.
 
 Q50. What is clear() in sets?
+Ans 50. clear function is used to delete all the values present in a set.
 
 Q51. What is frozen set?
+Ans 51. Frozen set is just an immutable version of a Python set object. While elements of a set can be modified at any time, elements of the frozen set remain the same after creation.
 
 Q52. How is frozen set different from set?
+Ans 52. In a frozen set we cannot add or remove values. In a normal set we can add or remove values.
 
 Q53. What is union() in sets? Explain via code.
+Ans 53. 
 
 Q54. What is intersection() in sets? Explain via code.
 
