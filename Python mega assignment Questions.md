@@ -388,33 +388,94 @@ Q52. How is frozen set different from set?
 Ans 52. In a frozen set we cannot add or remove values. In a normal set we can add or remove values.
 
 Q53. What is union() in sets? Explain via code.
-Ans 53. 
+Ans 53. The union() method returns a set that contains all items from the original set, and all items from the specified set(s). If there are any duplicate values in the other sets then those values are ignored.
+
+In the below code we have created 3 sets and there two common values in A and C. When we do a union of all the 3 sets then we get all the unique values from all the 3 sets. The output is "A,B,C,D,E,F,G" seven unique values.
+
+set1 = {'A','B','C'}
+set2 = {'C','D','E'}
+set3 = {'F','A','G'}
+unionSet = set1.union(set2,set3)
+print(unionSet)
 
 Q54. What is intersection() in sets? Explain via code.
+Ans 54. The intersection method returns a set that contains the common values between two or more sets.
+
+In the below code we have created 3 sets. When we do a intersection of all the three sets we get only 'A' value in commonSet because only 'A' is common in all the three sets.
+
+set1 = {'A','B','C'}
+set2 = {'A','D','E'}
+set3 = {'F','A','G'}
+commonSet = set1.intersection(set2,set3)
+print(commonSet)
 
 Q55. What is dictionary ibn Python?
+Ans 55. Dictionaries are used to store data values in key value pairs. A dictionary is a collection which is ordered, changeable and do not allow duplicates.
 
 Q56. How is dictionary different from all other data structures.
+Ans 56. Dictionary is different becuases it stores values in key value pair where as other data structures stores only values.
 
 Q57. How can we delare a dictionary in Python?
+Ans 57. We can declare a disctionary in Python by curly ({} - third) brackets. We provide the key and value pair are seperated using ":" and each items are seperated by comma ",".
+
+myDict = {'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'}
+print(myDict)
 
 Q58. What will the output of the following?
 ```
 var = {}
 print(type(var))
 ```
+Ans 58. Output
+
+<class 'dict'>
 
 Q59. How can we add an element in a dictionary?
+Ans 59. We can add elememnts to a dictionary at the time of declaration. After the dictionary is initialize then we can add value by creating a new key provided within "[]" (first) brackets and providing the value after equalto operator.
+
+myDict = {'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'}
+myDict["City"] = 'Delhi'
+print(myDict)
 
 Q60. Create a dictionary and access all the values in that dictionary.
+Ans 60. 
+
+myDict = {'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'}
+myDict["City"] = 'Delhi'
+for n in myDict : 
+    print(n + ":" + myDict.get(n
 
 Q61. Create a nested dictionary and access all the element in the inner dictionary.
+Ans 61. 
+
+myDict = {1:{'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'},
+    2: {'Name':'Robin', 'Age':'25', 'Occupation':'Co-Pilot'}}
+myDict[3] = {'Name':'Maverick', 'Age':'23', 'Occupation':'Racer'}
+for n in myDict :
+    for y in myDict[n] :
+        print(myDict[n][y])
 
 Q62. What is the use of get() function?
+Ans 62. get() method is used to fetch the value of a given key. The key is required parameter for get() function.
+
+myDict = {1:{'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'},
+    2: {'Name':'Robin', 'Age':'25', 'Occupation':'Co-Pilot'}}
+myDict[3] = {'Name':'Maverick', 'Age':'23', 'Occupation':'Racer'}
+print(myDict[1].get('Name')) 
 
 Q63. What is the use of items() function?
+Ans 63. The items() function returns the key and value pairs stored in a dictionary in a list
+
+myDict = {1:{'Name':'KingPin', 'Age':'27', 'Occupation':'Pilot'},
+    2: {'Name':'Robin', 'Age':'25', 'Occupation':'Co-Pilot'}}
+myDict[3] = {'Name':'Maverick', 'Age':'23', 'Occupation':'Racer'}
+
+x = myDict[1].items()
+print(myDict)
+print(x)
 
 Q64. What is the use of pop() function?
+Ans 64. pop () function removes a specific item from the dictionary. The pop () functions accepts a required key parameter and it removes the same item from the dic.
 
 Q65. What is the use of popitems() function?
 
