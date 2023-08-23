@@ -478,48 +478,184 @@ Q64. What is the use of pop() function?
 Ans 64. pop () function removes a specific item from the dictionary. The pop () functions accepts a required key parameter and it removes the same item from the dic.
 
 Q65. What is the use of popitems() function?
+And 65. The popitem() method removes the item that was last inserted into the dictionary. The removed item is the return value of the popitem() method, as a tuple.
 
 Q66. What is the use of keys() function?
+Ans 66. The keys() method returns a view object. The view object contains the keys of the dictionary, as a list. The view object will reflect any changes done to the dictionary even after initilization.
 
 Q67. What is the use of values() function?
+Ans 67. The values() method returns a view object. The view object contains the values of the dictionary, as a list. The view object will reflect any changes done to the dictionary after initilization.
 
 Q68. What are loops in Python?
+Ans 68. A for loop in Python is used to iterate over a sequence (list, tuple, set, dictionary, and string)
 
 Q69. How many type of loop are there in Python?
+Ans 69. There are three types of loops in Python for loop, while loop and nested loops.
 
 Q70. What is the difference between for and while loops?
+Ans 70. For loop is used to iterate over a sequence of items. While loop is used to repeatedly execute a block of statements while a condition is true.
 
 Q71. What is the use of continue statement?
+Ans 71. the continue statement in Python returns the control to the beginning of the loop.
 
 Q72. What is the use of break statement?
+Ans 72. The break statement in Python brings control out of the loop.
 
 Q73. What is the use of pass statement?
+Ans 73. We use pass statement in Python to write empty loops. Pass is also used for empty control statements, functions and classes.
 
 Q74. What is the use of range() function?
+Ans 74. The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.
 
 Q75. How can you loop over a dictionary?
-
+Ans 75. There are multiple ways to iterate over a dictionary in Python.
+Access key using the build .keys() 
+Access key without using a key() 
+Iterate through all values using .values()
+Iterate through all key, and value pairs using items()
+Access both key and value without using items()
+Print items in Key-Value in pair.
 
 ### Coding problems
 Q76. Write a Python program to find the factorial of a given number.
+Ans 76. 
+
+def getFactorial (inpNum):
+    factorial = 1
+    if inpNum <= 0:
+        return 1
+    else :
+        while (inpNum > 0):
+            factorial *= inpNum
+            inpNum -= 1
+    return factorial
+
+print("Factorial = ",getFactorial(5))
 
 Q77. Write a Python program to calculate the simple interest. Formula to calculate simple interest is SI = (P*R*T)/100
+Ans 77. 
+
+def getInterest (p, r, t):
+    si = round((p*r*t)/100,2)
+    return si
+
+p = float(input('Enter Principal'))
+r = float(input('Enter Rate of Interest'))
+t = float(input("Enter Time"))
+print("Simple Interest = ",getInterest(p,r,t))
+
 
 Q78. Write a Python program to calculate the compound interest. Formula of compound interest is A = P(1+ R/100)^t.
+Ans 78. 
+
+def getCInterest (p, r, t):
+    ci = round(p * pow((1+r/100),t),2)
+    return ci
+
+p = int(input('Enter Principal'))
+r = int(input('Enter Rate of Interest'))
+t = int(input("Enter Time"))
+print("Compund Interest = ",getCInterest(p,r,t))
+
 
 Q79. Write a Python program to check if a number is prime or not.
+Ans 79. 
+
+def checkPrime (inpNum):
+    flag = 0
+    for i in range (2,inpNum//2):
+        if (inpNum%2 == 0):
+            flag = 1
+            break
+    if flag == 0:
+        print(inpNum," Is a Prime Number")
+    else :
+        print(inpNum," Is not a Prime Number")
+
+checkPrime(18)
 
 Q80. Write a Python program to check Armstrong Number.
+Ans 80. 
+def checkArmstrong(inpNum):
+    temp = inpNum
+    armNum = 0
+    while (temp > 0):
+        r = int(temp%10)
+        armNum = r*r*r + armNum
+        temp = temp//10
+    if inpNum == armNum:
+        print(inpNum," Is an Armstrong Number")
+    else:
+        print(inpNum," Is not a Armstrong Number")
+
+checkArmstrong(407)
 
 Q81. Write a Python program to find the n-th Fibonacci Number.
+And 81. 
+def getFiboTerm (inpCount):
+    a = 0
+    b = 1
+    for i in range (1,inpCount):
+        fiboTerm = a + b
+        a = b
+        b = fiboTerm
+    print(a)
+
+getFiboTerm(7)
+
 
 Q82. Write a Python program to interchange the first and last element in a list.
+Ans 82.
+
+fruits = ['apple', 'banana', 'cherry', 'pineapple', 'orange', 'pears']
+
+firstNum = fruits[0]
+lastNum = fruits.pop()
+fruits[0] = lastNum
+fruits.append(firstNum)
+print(fruits)
+
 
 Q83. Write a Python program to swap two elements in a list.
+Ans 83. 
+def swapPositions(list, pos1, pos2):
+	
+	list[pos1], list[pos2] = list[pos2], list[pos1]
+	return list
+
+List = [23, 65, 19, 90, 23, 53]
+pos1, pos2 = 2, 5
+
+print(swapPositions(List, pos1-1, pos2-1))
+
 
 Q84. Write a Python program to find N largest element from a list.
+Ans 84. 
+def Nmaxelements(list1, N):
+	final_list = []
+
+	for i in range(0, N):
+		max1 = 0
+
+		for j in range(len(list1)):
+			if list1[j] > max1:
+				max1 = list1[j]
+
+		list1.remove(max1)
+		final_list.append(max1)
+
+	print(final_list)
+
+
+list1 = [2, 6, 41, 85, 0, 3, 7, 6, 10]
+N = 2
+Nmaxelements(list1, N)
+
 
 Q85. Write a Python program to find cumulative sum of a list.
+Ans 85.
+
+
 
 Q86. Write a Python program to check if a string is palindrome or not.
 
